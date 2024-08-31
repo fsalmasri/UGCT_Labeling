@@ -33,6 +33,9 @@ services:
       - "8000"
     depends_on:
       - db
+    environment:
+      - LABEL_STUDIO_LOCAL_FILES_SERVING_ENABLED=true
+      - LABEL_STUDIO_LOCAL_FILES_DOCUMENT_ROOT=/label-studio/data
     env_file:
       - env.list
 #    #      - LOG_LEVEL=DEBUG
