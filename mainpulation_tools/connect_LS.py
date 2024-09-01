@@ -53,8 +53,6 @@ def update_task(proj_id, task_id, pkg_name, img_name):
             project=proj_id,
         )
 
-project, proj_id = get_project_by_name('Package 1')
-
 
 def add_tasks_from_folder(proj_id, imgs_dir, folder_name):
     flst = os.listdir(imgs_dir)
@@ -62,28 +60,6 @@ def add_tasks_from_folder(proj_id, imgs_dir, folder_name):
     for f in flst:
         create_task(proj_id, folder_name, img_name=f)
 
-
-
-def get_classes(classes_file):
-    classes = []
-    with open(classes_file, 'r') as file:
-        for line in file:
-            classes.append(line.strip())
-
-    return classes
-
-def get_labels_from_file(labels_dir, lbl_name):
-    data = []
-    try:
-        with open(os.path.join(labels_dir, lbl_name), 'r') as file:
-            for line in file:
-                # Split the line by spaces and convert each part to a float
-                numbers = list(map(float, line.split()))
-                # Append the list of numbers to the data list
-                data.append(numbers)
-        return data
-    except:
-        return None
 
 def generate_ls_uid(length=10):
     first_char = secrets.choice(string.ascii_lowercase)
@@ -154,6 +130,8 @@ def add_annotations_from_tasks(proj_id):
             was_cancelled=False,
             ground_truth=True,
         )
+
+# project, proj_id = get_project_by_name('Package 1')
 
 # add_tasks_from_folder(proj_id, imgs_dir, 'package1')
 
