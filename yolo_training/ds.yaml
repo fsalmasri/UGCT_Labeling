@@ -1,0 +1,28 @@
+path: ../../../DS/Package1_training/
+train: 'train/images'
+val: 'validation/images'
+
+# class names
+nc: 21
+names:
+  0: 'alcelaphus buselaphus'
+  1: 'canis adustus'
+  2: 'crocuta crocuta'
+  3: 'erythrocebus patas'
+  4: 'fire'
+  5: 'genetta tigrina'
+  6: 'giraffa camelopardalis'
+  7: 'hippopotamus amphibius'
+  8: 'kobus ellipsiprymnus'
+  9: 'kobus kob'
+  10: 'loxodonta africana'
+  11: 'orycteropus afer'
+  12: 'ourebia ourebi'
+  13: 'panthera leo'
+  14: 'papio anubis'
+  15: 'pathera pardus'
+  16: 'person'
+  17: 'phacochoerus africanus'
+  18: 'syncerus caffer'
+  19: 'unknown animal'
+  20: 'vehicle'
