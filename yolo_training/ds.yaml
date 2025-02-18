@@ -1,4 +1,4 @@
-path: ../../../DS/Package1_training/
+path: ../../UGCT/DS/package_1_2/
 train: 'train/images'
 val: 'validation/images'
 

@@ -12,11 +12,11 @@ from PIL import Image
 
 from utils.DS_utils import get_classes, get_labels_from_file
 
-ds_dir = '../../DS/Package1-at-2024-09-13'
+ds_dir = '../../UGCT/DS/package_1_2'
 imgs_dir =os.path.join(ds_dir, 'images')
 lbls_dir = os.path.join(ds_dir, 'labels')
 
-dir_to_save = '../../DS/Package1_training'
+dir_to_save = '../../UGCT/DS/package_1_2'
 pathlib.Path(os.path.join(dir_to_save, 'train', 'images')).mkdir(parents=True, exist_ok=True)
 pathlib.Path(os.path.join(dir_to_save, 'train', 'labels')).mkdir(parents=True, exist_ok=True)
 pathlib.Path(os.path.join(dir_to_save, 'validation', 'images')).mkdir(parents=True, exist_ok=True)
@@ -60,10 +60,13 @@ print(cls_percent)
 print(np.sum(list(classes_dic.values())), np.sum(list(cls_percent.values())))
 
 
+import math
+
 validation_list = []
 training_list = []
 for k, v in classes_names_dic.items():
-    num_samples = int(len(v) * 0.15)
+    # num_samples = int(len(v) * 0.15)
+    num_samples = math.ceil(len(v) * 0.1)
 
     random_items = random.sample(v, num_samples)
     remaining_items = [x for x in v if x not in random_items]
@@ -72,8 +75,11 @@ for k, v in classes_names_dic.items():
     training_list.extend(remaining_items)
 
 validation_list = np.unique(validation_list)
-training_list = np.unique(empty_images + training_list)
-training_list = [x for x in training_list if x not in validation_list]
+training_list = np.unique(training_list)
+training_list = [x for x in training_list if x not in list(validation_list)]
+training_list = training_list + empty_images
+
+print(len(training_list), len(validation_list), len(training_list)+len(validation_list))
 
 
 for im_name in training_list:
@@ -90,3 +96,4 @@ for im_name in validation_list:
     shutil.copy(os.path.join(imgs_dir, im_name), os.path.join(dir_to_save, 'validation', 'images', im_name))
     shutil.copy(os.path.join(lbls_dir, lbl_name), os.path.join(dir_to_save, 'validation', 'labels', lbl_name))
 
+#
