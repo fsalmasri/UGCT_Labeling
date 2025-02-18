@@ -11,7 +11,7 @@ from PIL import Image
 def inference():
     model_name = 'yolov8n_custom2'
 
-    model = YOLO(f'runs/detect/{model_name}/weights/best.pt', task='detect')
+    model = YOLO(f'runs/detect/{model_name}/weights/best.pt', task='detect') 
 
     im_dir = r'../../UGCT_images/2'
     im_lst = os.listdir(im_dir)

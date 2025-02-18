@@ -1,5 +1,5 @@
 import os
-from tkinter import Image
+# from tkinter import Image
 
 import numpy as np
 from tqdm import tqdm
@@ -8,13 +8,14 @@ from PIL import Image
 
 from utils.DS_utils import get_classes, get_labels_from_file
 
-ds_dir = '../../DS/Package1-at-2024-09-13'
+ds_dir = '../../UGCT/DS/package_1_2'
 imgs_dir =os.path.join(ds_dir, 'images')
 lbls_dir = os.path.join(ds_dir, 'labels')
 
 imgs_list = os.listdir(imgs_dir)
 classes = get_classes(os.path.join(ds_dir, 'classes.txt'))
 
+empty_images =0
 classes_dic = {}
 normalized_area_dist = {}
 for im_name in imgs_list:
@@ -36,9 +37,12 @@ for im_name in imgs_list:
             else:
                 classes_dic[class_name] += 1
                 normalized_area_dist[class_name].append(area)
+    else:
+        empty_images += 1
 
 mean_norm_area_dist = {k:np.mean(v) for k, v in normalized_area_dist.items()}
 
+print(f'{empty_images} empty images of {len(imgs_list)} images; {100*empty_images/len(imgs_list):0.2f}%')
 
 # to_plot = classes_dic
 to_plot = mean_norm_area_dist
