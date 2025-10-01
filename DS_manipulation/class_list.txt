@@ -1,0 +1,56 @@
+alcelaphus buselaphus
+canis adustus
+crocuta crocuta
+erythrocebus patas
+fire
+genetta tigrina
+giraffa camelopardalis
+hippopotamus amphibius
+kobus ellipsiprymnus
+kobus kob
+loxodonta africana
+orycteropus afer
+ourebia ourebi
+panthera leo
+papio anubis
+pathera pardus
+person
+phacochoerus africanus
+syncerus caffer
+unknown animal
+vehicle
+=====================
+Aardvark
+African Buffalo
+African Elephant
+Animal
+Banded Mongoose
+Bird
+Bovidae Family
+Bushbuck
+Bushpig
+Canine Family
+Cattle Egret
+Cervidae Family
+Common Genet
+Common Warthog
+Domestic Cattle
+Genetta Species
+Giraffe
+Guineafowl Family
+Hartebeest
+Hippopotamus
+Kob
+Leopard
+Lion
+Loxodonta Species
+Mammal
+Northern Ground-hornbill
+Olive Baboon
+Oribi
+Patas Monkey
+Side-striped Jackal
+Spotted Hyaena
+Suidae Family
+Unknown
+Waterbuck
